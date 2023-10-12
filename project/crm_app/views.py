@@ -7,5 +7,5 @@ def index(request):
 def contragents(request):
     return HttpResponse('CONTRAGENTS ARE HERE')
 
-def cats(request):
-    return HttpResponse('categories')
+def categories(request, catid):
+    return HttpResponse(f"Category:   {catid}")

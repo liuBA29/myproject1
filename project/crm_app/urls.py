@@ -4,5 +4,5 @@ from crm_app.views import *
 urlpatterns = [
     path('', index),
     path('contragents/', contragents),
-    path('cats/', cats),
+    path('cats/<int:catid>/', categories),
 ]
