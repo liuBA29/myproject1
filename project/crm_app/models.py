@@ -123,14 +123,14 @@ class Contragents(models.Model):
 #-----------------------------------------------
 class Clientrequest(models.Model):
     contact = models.CharField(max_length=255, blank=True, verbose_name='Контактное лицо')
-    client_name = models.ForeignKey(Contragents, on_delete=models.PROTECT, verbose_name='Название компании')
+    client_name = models.CharField(max_length=255, blank=True, verbose_name='Название компании')
     description = models.CharField(max_length=255, blank=True)
-    opportunity = models.ForeignKey("QuotationOpportunity", on_delete=models.PROTECT)
+
     photo = models.ImageField(upload_to="photos/%Y/%m/%d/")
 
    # country_loaded = models.ForeignKey(Country, on_delete=models.PROTECT)
     address = models.CharField(max_length=90, verbose_name='Адрес')
-    country = models.ForeignKey(Country, on_delete=models.PROTECT)
+    country = models.ManyToManyField(Country, blank=True)
 
 
     weight = models.CharField(max_length=90, verbose_name='Вес товара')
