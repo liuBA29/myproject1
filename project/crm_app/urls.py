@@ -7,4 +7,3 @@ urlpatterns = [
     path('cats/<int:catid>/', categories),
 ]
 
-handler404 = pageNotFound
